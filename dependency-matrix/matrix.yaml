@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: diazphp
+  repo: phptest
+  url: https://github.com/diazphp/phptest.git
+  version: ""
+  versionURL: ""
