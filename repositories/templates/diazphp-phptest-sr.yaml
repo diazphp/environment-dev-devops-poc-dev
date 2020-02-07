@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: diazphp
+    provider: github
+    repository: phptest
+  name: diazphp-phptest
+spec:
+  description: Imported application for diazphp/phptest
+  httpCloneURL: https://github.com/diazphp/phptest.git
+  org: diazphp
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: phptest
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/diazphp/phptest.git
