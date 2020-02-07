@@ -1,0 +1,10 @@
+adminUser:
+  password: local:dev-devops-poc/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: ndiaz@sproutloud.com
+  token: local:dev-devops-poc/pipelineUser:token
+  username: ndiazg
+prow:
+  hmacToken: local:dev-devops-poc/prow:hmacToken

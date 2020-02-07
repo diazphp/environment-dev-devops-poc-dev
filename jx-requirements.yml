@@ -1,25 +1,68 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/ndiazg/jx-boot
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: dev-devops-poc
+  devEnvApprovers:
+  - ndiazg
+  environmentGitOwner: diazphp
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: dev-slapp
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: us-central1-a
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: k8s.sproutloud.com
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-dev-devops-poc-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-dev-devops-poc-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-dev-devops-poc-production
+gitops: true
 ingress:
-  domain: ""
+  domain: k8s.sproutloud.com
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -29,7 +72,11 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.341
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
